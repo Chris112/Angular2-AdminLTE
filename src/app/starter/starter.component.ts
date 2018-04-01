@@ -7,20 +7,21 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class StarterComponent implements OnInit, OnDestroy {
 
-  bodyClasses = 'skin-blue sidebar-mini';
+  theme = 'skin-blue';
+  bodyClasses = this.theme + 'sidebar-mini';
   body: HTMLBodyElement = document.getElementsByTagName('body')[0];
 
   constructor() { }
 
   ngOnInit() {
     // add the the body classes
-    this.body.classList.add('skin-blue');
+    this.body.classList.add(this.theme);
     this.body.classList.add('sidebar-mini');
   }
 
    ngOnDestroy() {
     // remove the the body classes
-    this.body.classList.remove('skin-blue');
+    this.body.classList.remove(this.theme);
     this.body.classList.remove('sidebar-mini');
   }
 
